@@ -28,21 +28,29 @@ function render(variables = {}) {
   // if includeCover==false then we reset the cover code without the <img> tag to make the cover transparent.
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
-
+  let firstName = variables.name ? variables.name : "Enmanuel";
+  let lastName = variables.name ? variables.name : "Pinto";
+  let ocupation = variables.role ? variables.role : "FullStack Developer";
+  let city = variables.city ? variables.city : "City";
+  let country = variables.country ? variables.country : "Country";
+  let github = variables.github ? "alesanchezr" : "Github";
+  let twitter = variables.twitter ? "twitter" : "Twitter";
+  let linkedin = variables.linkedin ? "linkedin" : "linkedin";
+  let instagram = variables.instagram ? "instagram" : "instagram";
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1> ${variables.name} ${variables.lastname}</h1>
-          <h2> ${variables.role}</h2>
-          <h3>${variables.city}, ${variables.country}</h3>
+          <h1> ${firstName} ${lastName}</h1>
+          <h2> ${ocupation}</h2>
+          <h3>${city} ${country}</h3>
           <ul class= "${variables.socialMediaPosition}" >
-            <li><a href="https://twitter.com/${variables.twitter}"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/${variables.github}"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/${variables.linkedin}"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/${variables.instagram}"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://twitter.com/${twitter}"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://github.com/${github}"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/${linkedin}"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com/${instagram}"><i class="fab fa-instagram"></i></a></li>
           </ul>
-        </div>n
+        </div>
     `;
 }
 
@@ -61,15 +69,15 @@ window.onload = function() {
     // social media bar position (left or right)
     socialMediaPosition: "position-left",
     // social media usernames
-    twitter: "",
-    github: "",
-    linkedin: "",
-    instagram: "",
-    name: "name",
-    lastname: "lastname",
-    role: "role",
-    country: "country",
-    city: "city"
+    twitter: null,
+    github: "alesanchezr",
+    linkedin: null,
+    instagram: null,
+    name: null,
+    lastname: null,
+    role: null,
+    country: null,
+    city: null
   };
   render(window.variables); //render the card for the first time
 
