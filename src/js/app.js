@@ -29,7 +29,7 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
   let firstName = variables.name ? variables.name : "Enmanuel";
-  let lastName = variables.name ? variables.name : "Pinto";
+  let lastName = variables.lastname ? variables.lastname : "Pinto";
   let ocupation = variables.role ? variables.role : "FullStack Developer";
   let city = variables.city ? variables.city : "City";
   let country = variables.country ? variables.country : "Country";
@@ -47,7 +47,7 @@ function render(variables = {}) {
           <ul class= "${variables.socialMediaPosition}" >
             <li><a href="https://twitter.com/${twitter}"><i class="fab fa-twitter"></i></a></li>
             <li><a href="https://github.com/${github}"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/${linkedin}"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/enmanuel-pinto-b8405613b/${linkedin}"><i class="fab fa-linkedin"></i></a></li>
             <li><a href="https://instagram.com/${instagram}"><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
